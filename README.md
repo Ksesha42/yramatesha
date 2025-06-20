@@ -483,6 +483,13 @@
             margin-top: 2rem;
         }
         
+        .attraction-details {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
         .attraction-details h3 {
             color: var(--primary-dark);
             margin: 2rem 0 1rem;
@@ -555,6 +562,7 @@
             justify-content: center;
             color: var(--primary);
             font-weight: bold;
+            border: 1px solid var(--primary-light);
         }
         
         .back-button {
@@ -565,10 +573,31 @@
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            background: var(--light);
+            border-radius: 50px;
+            border: 1px solid var(--primary-light);
+            transition: all 0.3s ease;
         }
         
         .back-button:hover {
-            text-decoration: underline;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .gallery-mini {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .gallery-mini img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
         }
         
         @media (max-width: 992px) {
@@ -584,6 +613,8 @@
         @media (max-width: 768px) {
             nav ul {
                 gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
             .header-content {
@@ -598,6 +629,10 @@
             
             .hero p {
                 font-size: 1.2rem;
+            }
+            
+            .gallery-mini {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -715,7 +750,7 @@
                         <div class="card-content">
                             <h3>Успенский кафедральный собор</h3>
                             <p>Величественный храм в центре Омска, воссозданный в 2007 году на месте разрушенного в советское время собора. Архитектурный шедевр в неовизантийском стиле, один из символов духовного возрождения России.</p>
-                            <a href="#uspensky" class="btn btn-primary">Подробнее</a>
+                            <a href="#" class="btn btn-primary" data-page="uspensky">Подробнее</a>
                         </div>
                     </div>
                     
@@ -726,7 +761,7 @@
                         <div class="card-content">
                             <h3>Омский академический театр драмы</h3>
                             <p>Один из старейших театров Сибири, основанный в 1874 году. Здание театра - архитектурный памятник федерального значения в стиле сибирского барокко с элементами классицизма.</p>
-                            <a href="#drama-theater" class="btn btn-primary">Подробнее</a>
+                            <a href="#" class="btn btn-primary" data-page="drama-theater">Подробнее</a>
                         </div>
                     </div>
                     
@@ -737,7 +772,7 @@
                         <div class="card-content">
                             <h3>Любинский проспект</h3>
                             <p>Пешеходная улица в историческом центре Омска - любимое место прогулок горожан и гостей города. Здесь сохранились здания XIX века, установлены памятники и скульптуры, работают кафе и магазины.</p>
-                            <a href="#lubinsky" class="btn btn-primary">Подробнее</a>
+                            <a href="#" class="btn btn-primary" data-page="lubinsky">Подробнее</a>
                         </div>
                     </div>
                     
@@ -748,7 +783,7 @@
                         <div class="card-content">
                             <h3>Омская крепость</h3>
                             <p>Историко-культурный комплекс на месте основания Омска в 1716 году. Сохранились здания XVIII-XIX веков: Тобольские ворота, гауптвахта, комендантский дом, где бывал Ф.М. Достоевский.</p>
-                            <a href="#fortress" class="btn btn-primary">Подробнее</a>
+                            <a href="#" class="btn btn-primary" data-page="fortress">Подробнее</a>
                         </div>
                     </div>
                 </div>
@@ -893,8 +928,8 @@
         </footer>
     </div>
     
-    <!-- Страница Успенского собора -->
-    <div id="uspensky" style="display: none;">
+    <!-- Страницы достопримечательностей -->
+    <div id="uspensky" class="attraction-page" style="display: none;">
         <header>
             <div class="container">
                 <div class="header-content">
@@ -941,6 +976,11 @@
                         <p>Первый Успенский собор был заложен в 1891 году в честь спасения цесаревича Николая (будущего императора Николая II) во время покушения в Японии. Строительство велось на пожертвования горожан и завершилось в 1898 году. Храм освятили в честь Успения Пресвятой Богородицы.</p>
                         <p>В 1935 году, в период борьбы с религией, собор был взорван. На его месте разбили сквер, а позднее установили фонтан и скульптуру "Валентинка".</p>
                         <p>Возрождение святыни началось в 2005 году по инициативе губернатора Омской области Леонида Полежаева. Восстановление велось по сохранившимся чертежам и фотографиям. 15 июля 2007 года состоялось великое освящение воссозданного собора.</p>
+                        
+                        <div class="gallery-mini">
+                            <img src="https://images.unsplash.com/photo-1592486058513-9d48b6647a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Интерьер собора">
+                            <img src="https://images.unsplash.com/photo-1541367777708-7905fe3296c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Вид с высоты">
+                        </div>
                         
                         <h3>Архитектурные особенности</h3>
                         <p>Успенский собор построен в русско-византийском стиле, характерном для храмового зодчества конца XIX века:</p>
@@ -997,7 +1037,350 @@
         <footer>
             <div class="container">
                 <div class="copyright">
-                    <p>&copy; 2025 "Омск - Любовь Моя". Все права защищены.</p>
+                    <p>&copy; 2023 "Омск - Любовь Моя". Все права защищены.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Страница Омского академического театра драмы -->
+    <div id="drama-theater" class="attraction-page" style="display: none;">
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <div class="logo-icon">ОМ</div>
+                        <div class="logo-text">Омск - Любовь Моя</div>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="#" class="back-to-home">Главная</a></li>
+                            <li><a href="#about">О городе</a></li>
+                            <li><a href="#attractions">Достопримечательности</a></li>
+                            <li><a href="#gallery">Галерея</a></li>
+                            <li><a href="#contact">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        
+        <section class="attraction-page">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="#" class="back-to-home">Главная</a>
+                    <span>/</span>
+                    <a href="#attractions">Достопримечательности</a>
+                    <span>/</span>
+                    <span>Театр драмы</span>
+                </div>
+                
+                <div class="page-header">
+                    <h2 class="section-title">Омский академический театр драмы</h2>
+                </div>
+                
+                <div class="page-content">
+                    <div class="attraction-details">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1601924638867-1a6b8b78e1e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Театр драмы">
+                        </div>
+                        
+                        <p>Омский академический театр драмы - один из старейших театров Сибири, основанный в 1874 году. Здание театра является архитектурным памятником федерального значения и образцом сибирского барокко с элементами классицизма.</p>
+                        
+                        <h3>История театра</h3>
+                        <p>Первые театральные представления в Омске датируются 1764 годом, но официальной датой основания театра считается 1874 год, когда была создана первая профессиональная труппа. Современное здание театра было построено в 1905 году по проекту архитектора Иллиодора Хворинова.</p>
+                        <p>В советское время театр получил звание "академического" - первым из провинциальных театров России. За свою историю театр пережил несколько реконструкций, последняя из которых завершилась в 2015 году.</p>
+                        
+                        <div class="gallery-mini">
+                            <img src="https://images.unsplash.com/photo-1541367777708-7905fe3296c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Интерьер театра">
+                            <img src="https://images.unsplash.com/photo-1573152958734-1922c188fba3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Сцена">
+                        </div>
+                        
+                        <h3>Архитектурные особенности</h3>
+                        <p>Здание театра - настоящий шедевр архитектуры:</p>
+                        <ul>
+                            <li>Стиль: сибирское барокко с элементами классицизма</li>
+                            <li>Фасад украшен лепниной и скульптурами</li>
+                            <li>Зрительный зал на 800 мест с уникальной акустикой</li>
+                            <li>Современное техническое оснащение сцены</li>
+                            <li>Восстановленные исторические интерьеры</li>
+                        </ul>
+                        
+                        <h3>Театр сегодня</h3>
+                        <p>Сегодня Омский академический театр драмы - один из ведущих театров России:</p>
+                        <ul>
+                            <li>В репертуаре более 30 спектаклей различных жанров</li>
+                            <li>Труппа театра включает заслуженных и народных артистов России</li>
+                            <li>Ежегодный международный фестиваль "Академия"</li>
+                            <li>Экскурсии по историческому зданию театра</li>
+                        </ul>
+                        <p>Театр активно сотрудничает с известными режиссерами из России и Европы, что делает его репертуар разнообразным и современным.</p>
+                        
+                        <a href="#" class="back-button"><i class="fas fa-arrow-left"></i> Вернуться к достопримечательностям</a>
+                    </div>
+                    
+                    <div class="sidebar">
+                        <div class="info-box">
+                            <h4><i class="fas fa-info-circle"></i> Основная информация</h4>
+                            <p><i class="fas fa-map-marker-alt"></i> Адрес: ул. Ленина, 8а</p>
+                            <p><i class="far fa-clock"></i> Кассы: ежедневно 10:00-19:00</p>
+                            <p><i class="fas fa-theater-masks"></i> Статус: Академический театр</p>
+                            <p><i class="fas fa-calendar-alt"></i> Год основания: 1874</p>
+                            <p><i class="fas fa-archway"></i> Архитектурный стиль: Сибирское барокко</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h4><i class="fas fa-star"></i> Интересные факты</h4>
+                            <p><i class="fas fa-crown"></i> Первый академический театр в провинции</p>
+                            <p><i class="fas fa-paint-brush"></i> Уникальный занавес работы Кривцова</p>
+                            <p><i class="fas fa-users"></i> Вместимость зрительного зала - 800 человек</p>
+                            <p><i class="fas fa-history"></i> Здание - памятник федерального значения</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h4><i class="fas fa-map-marked-alt"></i> Расположение</h4>
+                            <div class="map-container">
+                                Карта: Театр драмы, Омск
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="container">
+                <div class="copyright">
+                    <p>&copy; 2023 "Омск - Любовь Моя". Все права защищены.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Страница Любинского проспекта -->
+    <div id="lubinsky" class="attraction-page" style="display: none;">
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <div class="logo-icon">ОМ</div>
+                        <div class="logo-text">Омск - Любовь Моя</div>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="#" class="back-to-home">Главная</a></li>
+                            <li><a href="#about">О городе</a></li>
+                            <li><a href="#attractions">Достопримечательности</a></li>
+                            <li><a href="#gallery">Галерея</a></li>
+                            <li><a href="#contact">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        
+        <section class="attraction-page">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="#" class="back-to-home">Главная</a>
+                    <span>/</span>
+                    <a href="#attractions">Достопримечательности</a>
+                    <span>/</span>
+                    <span>Любинский проспект</span>
+                </div>
+                
+                <div class="page-header">
+                    <h2 class="section-title">Любинский проспект</h2>
+                </div>
+                
+                <div class="page-content">
+                    <div class="attraction-details">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Любинский проспект">
+                        </div>
+                        
+                        <p>Любинский проспект - пешеходная улица в историческом центре Омска, любимое место прогулок горожан и гостей города. Проспект протянулся на 600 метров от Соборной площади до Театральной площади, сохранив атмосферу старого Омска.</p>
+                        
+                        <h3>История проспекта</h3>
+                        <p>Проспект получил свое название в 1854 году в честь жены генерал-губернатора Западной Сибири Густава Гасфорда - Любови Федоровны. В конце XIX - начале XX века здесь селились самые богатые купцы Омска, строившие особняки в различных архитектурных стилях.</p>
+                        <p>В советское время проспект был переименован в улицу Ленина, но в 1994 году ему вернули историческое название. В 2000-х годах проспект был полностью реконструирован и стал пешеходной зоной.</p>
+                        
+                        <div class="gallery-mini">
+                            <img src="https://images.unsplash.com/photo-1483664852095-d6cc6870702d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Зимний проспект">
+                            <img src="https://images.unsplash.com/photo-1504829857797-ddff29c27927?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Летний вечер">
+                        </div>
+                        
+                        <h3>Архитектура проспекта</h3>
+                        <p>Любинский проспект - настоящий музей архитектуры под открытым небом:</p>
+                        <ul>
+                            <li>Особняк купца Батюшкова (эклектика)</li>
+                            <li>Здание страхового общества "Саламандра" (модерн)</li>
+                            <li>Торговый дом купца Волкова (неоклассицизм)</li>
+                            <li>Доходный дом купчихи Шаниной (кирпичный стиль)</li>
+                            <li>Гостиница "Россия" (эклектика)</li>
+                        </ul>
+                        
+                        <h3>Что посмотреть</h3>
+                        <p>На Любинском проспекте расположено множество интересных объектов:</p>
+                        <ul>
+                            <li>Памятник Любочке (жене генерал-губернатора)</li>
+                            <li>Скульптура "Степанчиково" по мотивам Достоевского</li>
+                            <li>Памятник сантехнику Степанычу</li>
+                            <li>Фонтан "Изобилие"</li>
+                            <li>Множество кафе и ресторанов с сибирской кухней</li>
+                        </ul>
+                        <p>Прогулка по Любинскому проспекту - это путешествие в прошлое Омска, где каждая деталь рассказывает свою историю.</p>
+                        
+                        <a href="#" class="back-button"><i class="fas fa-arrow-left"></i> Вернуться к достопримечательностям</a>
+                    </div>
+                    
+                    <div class="sidebar">
+                        <div class="info-box">
+                            <h4><i class="fas fa-info-circle"></i> Основная информация</h4>
+                            <p><i class="fas fa-map-marker-alt"></i> Адрес: Центр города, от ул. Ленина до ул. Музейная</p>
+                            <p><i class="far fa-clock"></i> Доступ: круглосуточно</p>
+                            <p><i class="fas fa-walking"></i> Статус: Пешеходная зона</p>
+                            <p><i class="fas fa-ruler"></i> Протяженность: 600 метров</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h4><i class="fas fa-star"></i> Интересные факты</h4>
+                            <p><i class="fas fa-history"></i> Основан в 1854 году</p>
+                            <p><i class="fas fa-monument"></i> 12 исторических зданий</p>
+                            <p><i class="fas fa-camera"></i> Самое фотографируемое место Омска</p>
+                            <p><i class="fas fa-tree"></i> Липовая аллея - визитная карточка</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h4><i class="fas fa-map-marked-alt"></i> Расположение</h4>
+                            <div class="map-container">
+                                Карта: Любинский проспект, Омск
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="container">
+                <div class="copyright">
+                    <p>&copy; 2023 "Омск - Любовь Моя". Все права защищены.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Страница Омской крепости -->
+    <div id="fortress" class="attraction-page" style="display: none;">
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <div class="logo-icon">ОМ</div>
+                        <div class="logo-text">Омск - Любовь Моя</div>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="#" class="back-to-home">Главная</a></li>
+                            <li><a href="#about">О городе</a></li>
+                            <li><a href="#attractions">Достопримечательности</a></li>
+                            <li><a href="#gallery">Галерея</a></li>
+                            <li><a href="#contact">Контакты</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        
+        <section class="attraction-page">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="#" class="back-to-home">Главная</a>
+                    <span>/</span>
+                    <a href="#attractions">Достопримечательности</a>
+                    <span>/</span>
+                    <span>Омская крепость</span>
+                </div>
+                
+                <div class="page-header">
+                    <h2 class="section-title">Омская крепость</h2>
+                </div>
+                
+                <div class="page-content">
+                    <div class="attraction-details">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1483664852095-d6cc6870702d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Омская крепость">
+                        </div>
+                        
+                        <p>Омская крепость - историко-культурный комплекс на месте основания Омска в 1716 году. Это место, откуда начинался город, сохранившее дух первых поселенцев и военную историю Сибири.</p>
+                        
+                        <h3>История крепости</h3>
+                        <p>Первая Омская крепость была заложена в 1716 году по приказу подполковника Ивана Бухгольца как форпост на южных рубежах Российской империи. Вторая крепость, сохранившаяся до наших дней, была построена в 1768-1771 годах по проекту инженера Мальмова.</p>
+                        <p>В разные годы в крепости служили: основатель русского флота на Тихом океане Г.И. Невельской, исследователь Дальнего Востока Г.И. Шелихов, писатель Ф.М. Достоевский. Крепость утратила военное значение в XIX веке, а в советское время многие здания были разрушены.</p>
+                        
+                        <div class="gallery-mini">
+                            <img src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Тобольские ворота">
+                            <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Гауптвахта">
+                        </div>
+                        
+                        <h3>Архитектурные объекты</h3>
+                        <p>На территории крепости сохранились уникальные исторические здания:</p>
+                        <ul>
+                            <li>Тобольские ворота (1791-1794 гг.)</li>
+                            <li>Омские ворота (1791-1794 гг.)</li>
+                            <li>Здание гауптвахты (1781-1785 гг.)</li>
+                            <li>Кинотеатр "Художественный" (1916 г.)</li>
+                            <li>Казарма дисциплинарных рот (1820-е гг.)</li>
+                            <li>Комендантский дом (1799 г.)</li>
+                        </ul>
+                        
+                        <h3>Музейный комплекс</h3>
+                        <p>Сегодня Омская крепость - это музей под открытым небом:</p>
+                        <ul>
+                            <li>Музей воинской славы омичей</li>
+                            <li>Экспозиция "Омск - столица Белой России"</li>
+                            <li>Выставка о пребывании Достоевского в Омске</li>
+                            <li>Историческая реконструкция солдатских казарм</li>
+                            <li>Мастерские традиционных ремесел</li>
+                        </ul>
+                        <p>Крепость стала культурным центром города, где регулярно проводятся исторические реконструкции, фестивали и культурные мероприятия.</p>
+                        
+                        <a href="#" class="back-button"><i class="fas fa-arrow-left"></i> Вернуться к достопримечательностям</a>
+                    </div>
+                    
+                    <div class="sidebar">
+                        <div class="info-box">
+                            <h4><i class="fas fa-info-circle"></i> Основная информация</h4>
+                            <p><i class="fas fa-map-marker-alt"></i> Адрес: ул. Партизанская, 5а</p>
+                            <p><i class="far fa-clock"></i> Часы работы: 10:00-18:00 (вт-вс)</p>
+                            <p><i class="fas fa-landmark"></i> Статус: Историко-культурный комплекс</p>
+                            <p><i class="fas fa-calendar-alt"></i> Год основания: 1716</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h4><i class="fas fa-star"></i> Интересные факты</h4>
+                            <p><i class="fas fa-book"></i> Здесь отбывал каторгу Ф.М. Достоевский</p>
+                            <p><i class="fas fa-flag"></i> В 1918-1919 гг. - ставка Колчака</p>
+                            <p><i class="fas fa-door-open"></i> Тобольские ворота - символ Омска</p>
+                            <p><i class="fas fa-ruler"></i> Площадь комплекса - 6 га</p>
+                        </div>
+                        
+                        <div class="info-box">
+                            <h4><i class="fas fa-map-marked-alt"></i> Расположение</h4>
+                            <div class="map-container">
+                                Карта: Омская крепость
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="container">
+                <div class="copyright">
+                    <p>&copy; 2023 "Омск - Любовь Моя". Все права защищены.</p>
                 </div>
             </div>
         </footer>
@@ -1009,14 +1392,27 @@
             // Показываем главную страницу по умолчанию
             document.getElementById('home-page').style.display = 'block';
             document.getElementById('uspensky').style.display = 'none';
+            document.getElementById('drama-theater').style.display = 'none';
+            document.getElementById('lubinsky').style.display = 'none';
+            document.getElementById('fortress').style.display = 'none';
             
-            // Обработка перехода на страницу достопримечательности
-            const attractionLinks = document.querySelectorAll('a[href="#uspensky"], a[href="#drama-theater"], a[href="#lubinsky"], a[href="#fortress"]');
+            // Обработка перехода на страницы достопримечательностей
+            const attractionLinks = document.querySelectorAll('a[data-page]');
             attractionLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    
+                    // Скрываем все страницы
                     document.getElementById('home-page').style.display = 'none';
-                    document.getElementById('uspensky').style.display = 'block';
+                    document.getElementById('uspensky').style.display = 'none';
+                    document.getElementById('drama-theater').style.display = 'none';
+                    document.getElementById('lubinsky').style.display = 'none';
+                    document.getElementById('fortress').style.display = 'none';
+                    
+                    // Показываем выбранную страницу
+                    document.getElementById(pageId).style.display = 'block';
+                    window.scrollTo(0, 0);
                 });
             });
             
@@ -1025,8 +1421,14 @@
             backLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    document.getElementById('home-page').style.display = 'block';
+                    // Скрываем все страницы достопримечательностей
                     document.getElementById('uspensky').style.display = 'none';
+                    document.getElementById('drama-theater').style.display = 'none';
+                    document.getElementById('lubinsky').style.display = 'none';
+                    document.getElementById('fortress').style.display = 'none';
+                    
+                    // Показываем главную страницу
+                    document.getElementById('home-page').style.display = 'block';
                     window.scrollTo(0, 0);
                 });
             });
